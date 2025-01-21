@@ -3,7 +3,7 @@
 
 #include <Windows.h>
 
-#define EXCEPTION_SOFTWAR_DEFINED 0xE0000000
+#define EXCEPTION_SOFTWARE_DEFINED 0xE0000000
 
 static int __default_filter(const PEXCEPTION_POINTERS ep, PEXCEPTION_RECORD record, PCONTEXT context) {
     if (record) *record = *(ep->ExceptionRecord);
