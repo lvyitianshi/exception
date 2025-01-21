@@ -15,7 +15,7 @@ static int __default_filter(const PEXCEPTION_POINTERS ep, PEXCEPTION_RECORD reco
 #define catch(record, context) __except(__default_filter(GetExceptionInformation(), record, context))
 #define ULPA(v) (ULONG_PTR[]){v}
 #define ULP(v) (ULONG_PTR)(v)
-#define throw(code, args) RaiseException(code, EXCEPTION_NONCONTINUABLE, sizeof(args) / sizeof(ULONG_PTR), args)
+#define throw(code, num, args) RaiseException(code, EXCEPTION_NONCONTINUABLE, num, args)
 #define finally __finally
 #define leave __leave
 #define abnormal _abnormal_termination()
